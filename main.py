@@ -14,6 +14,8 @@ TARGET_INCREMENT = 400
 TARGET_EVENT = pygame.USEREVENT
 TARGET_PADDING = 30
 BG_COLOR = (0, 25, 40)
+LIVES = 3
+TOP_BAR_HEIGHT = 50
 
 class Target: 
     MAX_SIZE = 30
@@ -55,6 +57,8 @@ def draw(win, targets):
 
     pygame.display.update()
 
+def draw_top_bar(win, elapsed_time, targets_pressed, misses): 
+    pygame.draw.rect(win, "grey", (0,0, WIDTH, TOP_BAR_HEIGHT))
 def main():
     run = True
     targets = []
@@ -97,8 +101,11 @@ def main():
             if click and target.collide(*mouse_pos):
                 targets.remove(target)
                 target_pressed +=1
-
+        if misses >= LIVES: 
+            pass #this will end the game
         draw(WIN, targets)
+        draw_top_bar(WIN, elapsed_time, targets_pressed, misses):
+
 
     pygame.quit()
 
