@@ -2,8 +2,7 @@ import math
 import random
 import pygame
 import time
-paygame.init()
-
+pygame.init()
 WIDTH, HEIGHT = 800, 600
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -17,3 +16,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
                 break
+    pygame.quit()
+
+if __name__ == "__main__":
+    main()
