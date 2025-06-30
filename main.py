@@ -78,6 +78,8 @@ def main():
             if target.size <= 0:
                 targets.remove(target)
 
+
+
         draw(WIN, targets)
 
     pygame.quit()
