@@ -43,6 +43,10 @@ class Target:
         pygame.draw.circle(win, self.COLOR, (self.x, self.y,), self.size * 0.6)
         pygame.draw.circle(win, self.SECOND_COLOR, (self.x, self.y,), self.size * 0.4)
 
+    def collide(self, x, y):
+        dis = math.sqrt((self.x - x)**2 + (self.y - y) ** 2)
+        return dis <= self.size
+
 def draw(win, targets): 
     win.fill(BG_COLOR)
     
