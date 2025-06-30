@@ -41,15 +41,26 @@ class Target:
         pygame.draw.circle(win, self.SECOND_COLOR, (self.x, self.y,), self.size * 8)
         pygame.draw.circle(win, self.COLOR, (self.x, self.y,), self.size * 0.6)
         pygame.draw.circle(win, self.SECOND_COLOR, (self.x, self.y,), self.size * 0.4)
+
+
 def main():
     run = True
     targets = []
+
+    pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
 
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 break
+
+            if event.type = TARGET_EVENT:
+                x = random.randint(TARGET_PADDING, WIDTH - TARGET_PADDING)
+                y = random.randint(TARGET_PADDING, HEIGHT - TARGET_PADDING)
+                target = Target(x, y)
+                targets.append(target)
+
     pygame.quit()
 
 if __name__ == "__main__":
