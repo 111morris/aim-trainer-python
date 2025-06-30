@@ -20,6 +20,16 @@ class Target:
         self.y = y
         self.size = 0
 
+    def update(self):
+        if self.size + self.GROWTH_RATE >= self.MAX_SIZE:
+            self.grow = False
+
+        if self.grow:
+            self.size += self.GROWTH_RATE
+        else: 
+            self.size -= self.GROWTH_RATE
+    def draw(self, win):
+        pygame.draw.circle(win, self.COLOR, (self.x, self.y,), self.size)
 def main():
     run = True
     while run:
