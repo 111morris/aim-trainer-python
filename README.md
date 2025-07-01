@@ -10,10 +10,6 @@ A simple aim training game built with Python and Pygame. Test and improve your m
 - Clean UI with a top bar showing time, hits, speed, and remaining lives
 - End screen with detailed statistics and option to restart or quit
 
-## Screenshots
-
-_Add screenshots here of your game running_
-
 ## Installation
 
 1. Make sure you have Python 3 installed.
