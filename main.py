@@ -99,9 +99,7 @@ def end_screen(win, elapsed_time, targets_pressed, clicks):
     run = True
     while run: 
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                quit()
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.QUIT or event.type == pygame.KEYDOWN:
                 quit()
 
 def get_middle(surface):
