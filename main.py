@@ -121,8 +121,6 @@ def end_screen(win, elapsed_time, targets_pressed, clicks):
                     pygame.quit()
                     quit()
 
-
-
 def get_middle(surface):
     return WIDTH / 2 - surface.get_width() / 2
 
