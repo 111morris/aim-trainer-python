@@ -95,6 +95,15 @@ def end_screen(win, elapsed_time, targets_pressed, clicks):
     win.blit(hits_label, (get_middle(hits_label), 5))
     win.blit(accuracy_label, (get_middle(accuracy_label), 5))
 
+    pygame.display.update()
+    run = True
+    while run: 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quit()
+            if event.type == pygame.KEYDOWN:
+                quit()
+
 def get_middle(surface):
     return WIDTH / 2 - surface.get_width()/2
 
