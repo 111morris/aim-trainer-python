@@ -56,7 +56,6 @@ def draw(win, targets):
     for target in targets:
         target.draw(win)
 
-    pygame.display.update()
 
 def format_time(secs):
     milli = math.floor(int(secs * 1000 % 1000)/100)
@@ -67,14 +66,17 @@ def format_time(secs):
 
 def draw_top_bar(win, elapsed_time, targets_pressed, misses): 
     pygame.draw.rect(win, "grey", (0,0, WIDTH, TOP_BAR_HEIGHT))
-    time_label = LABEL_FONT.render("", 1, "black")
+    time_label = LABEL_FONT.render(
+        f"Time: {format_time(elapsed_time)}", 1, "black")
+
+    win.blit(time_label, (5,5))
 
 
 def main():
     run = True
     targets = []
     clock = pygame.time.Clock()
-    target_pressed = 0 
+    targets_pressed = 0 
     clicks = 0 
     misses = 0 
     start_time = time.time()
@@ -111,11 +113,15 @@ def main():
 
             if click and target.collide(*mouse_pos):
                 targets.remove(target)
-                target_pressed +=1
+                targets_pressed +=1
         if misses >= LIVES: 
             pass #this will end the game
+
+        elapsed_time = time.time() - start_time
         draw(WIN, targets)
-        draw_top_bar(WIN, elapsed_time, targets_pressed, misses):
+        draw_top_bar(WIN, elapsed_time, targets_pressed, misses)
+        
+        pygame.display.update()
 
 
     pygame.quit()
