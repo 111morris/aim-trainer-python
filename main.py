@@ -79,6 +79,22 @@ def draw_top_bar(win, elapsed_time, targets_pressed, misses):
     win.blit(hits_label, (450, 5))
     win.blit(lives_label, (650, 5))
 
+def end_screen(win, elapsed_time, targets_pressed, clicks):
+    win.blit(BG_COLOR)
+    time_label = LABEL_FONT.render(
+        f"Time: {format_time(elapsed_time)}", 1, "black")
+    
+    speed = round(targets_pressed / elapsed_time, 1)
+    speed_label = LABEL_FONT.render(f"Speed: {speed} t/s", 1, "black")
+    hits_label = LABEL_FONT.render(f"Hits: {targets_pressed}",1, "black")
+    accuracy = round(targets_pressed/clicks * 100, 1)
+    accuracy_label = LABEL_FONT.render(f"Accuracy: {accuracy}%", 1, "black")
+
+    win.blit(time_label, (5,5))
+    win.blit(speed_label, (200,5))
+    win.blit(hits_label, (450, 5))
+    win.blit(accuracy_label, (650, 5))
+
 
 def main():
     run = True
