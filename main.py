@@ -125,6 +125,7 @@ def get_middle(surface):
     return WIDTH / 2 - surface.get_width() / 2
 
 def main():
+
     run = True
     clock = pygame.time.Clock()
 
@@ -177,8 +178,6 @@ def main():
             draw(WIN, targets)
             draw_top_bar(WIN, elapsed_time, targets_pressed, misses)
             pygame.display.update()
-
-
 
 if __name__ == "__main__":
     main()
