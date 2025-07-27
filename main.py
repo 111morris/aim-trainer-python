@@ -157,6 +157,7 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     click = True 
                     clicks += 1
+                    clicking = True
 
             for target in targets[:]:
                 target.update()
