@@ -149,7 +149,11 @@ def main():
                     quit()
 
                 if event.type == TARGET_EVENT:
-                    
+                    x = random.randint(TARGET_PADDING, WIDTH - TARGET_PADDING)
+                    y = random.randint(TARGET_PADDING + TOP_BAR_HEIGHT, HEIGHT - TARGET_PADDING)
+                    target = Target(x, y)
+                    targets.append(target)
+
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     click = True 
                     clicks += 1
