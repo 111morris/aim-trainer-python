@@ -134,6 +134,15 @@ def main():
         targets_pressed = 0 
         clicks = 0 
         misses = 0 
+
+        for i in range(3, 0, -1): 
+            WIN.fill(BG_COLOR) 
+            label = LABEL_FONT.render(str(i), True, WHITE)
+            WIN.blit(label, (get_middle(label), HEIGHT/2))
+            pygame.display.update()
+            pygame.time.delay(1000)
+
+
         start_time = time.time()
 
         pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
